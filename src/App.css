@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  /*animation: App-logo-spin infinite 20s linear;*/
+  height: 3vw;
+  filter: invert(100%);
+}
+
+.App-header {
+  background-color: #222;
+  height: 8vw;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-family: 'Orbitron', serif;
+  font-size: 2vw;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
