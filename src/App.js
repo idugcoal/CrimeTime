@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Slider from './components/Slider';
+import Header from './components/Header';
 import Clock from './components/Clock';
+import Slider from './components/Slider';
 import Checkboxes from './components/Checkboxes';
-const axios = require('axios');
-
 import './App.css';
+const crimeCodesJSON = require('../appendedCodes.json');
+const axios = require('axios');
 
 injectTapEventPlugin();
 
-
-
 class App extends Component {
   constructor(props) {
-  super(props);
-  this.state = {
-    sliderValue: 11
-  }
+    super(props);
+    this.state = {
+      sliderValue: 11,
+      crimeCodes: crimeCodesJSON.crimeList
+    }
 
-  this.handleSliderChange = this.handleSliderChange.bind(this);
+    this.handleSliderChange = this.handleSliderChange.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
   }
 
   componentDidMount() {
@@ -42,8 +42,9 @@ class App extends Component {
       })
   }
 
-  handleCheck(value) {
-    console.log('CHECK', value);
+  handleCheck() {
+    //console.log('handleCheck', );
+    console.log('yo');
   }
   
   render() {
@@ -73,7 +74,11 @@ class App extends Component {
             onSliderChange={this.handleSliderChange} 
             sliderValue={this.state.sliderValue}
           />
-          <Checkboxes onCheck={this.handleCheck}/>
+          <Checkboxes 
+            crimeCodes={this.state.crimeCodes}
+            onCheck={this.handleCheck}
+
+          />
         </div>
       </MuiThemeProvider>
     );
