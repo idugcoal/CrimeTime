@@ -22,7 +22,81 @@
   font-size: large;
 }
 
+.Clock {
+  background-color: green;
+  color: #222;
+  font-family: 'Orbitron', serif;
+  font-size: 4vw;
+  margin: auto;
+  text-align: center;
+}
+
+.Checkboxes {
+  background-color: pink;
+  /*margin: 0 auto;*/
+  /*width: 80vw;*/
+  text-align: left;
+  
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-top: -10px;
+  font-size: 1em;
+}
+
+.Checkboxes .Checkbox {
+  flex: 1 0 400px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.Slider {
+  background-color: yellow;
+  font-size: large;
+  text-align: center;
+  width: 33vw;
+  margin: auto;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media (min-width: 410px) {
+  .Checkboxes .Checkbox {
+    max-width: calc(50% - 10px);
+  }
+}
+@media (min-width: 620px) {
+  .Checkboxes .Checkbox {
+    max-width: calc(33.33333% - 10px);
+  }
+}
+@media (min-width: 830px) {
+  .Checkboxes .Checkbox {
+    max-width: calc(25% - 10px);
+  }
+}
+@media (min-width: 1040px) {
+  .Checkboxes .Checkbox {
+    max-width: calc(20% - 10px);
+  }
+}
+@media (min-width: 1250px) {
+  .Checkboxes .Checkbox {
+    max-width: calc(16.66667% - 10px);
+  }
+}
+@media (min-width: 1460px) {
+  .Checkboxes .Checkbox {
+    max-width: calc(14.28571% - 10px);
+  }
+}
+@media (min-width: 1670px) {
+  .Checkboxes .Checkbox {
+    min-width: calc(12.5% - 10px);
+  }
 }
