@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Clock from './components/Clock';
 import Slider from './components/Slider';
 import Checkboxes from './components/Checkboxes';
+import BarChart from './components/BarChart';
 import './App.css';
 const crimeCodesJSON = require('../appendedCodes.json');
 const axios = require('axios');
@@ -77,7 +78,9 @@ class App extends Component {
           <Checkboxes 
             crimeCodes={this.state.crimeCodes}
             onCheck={this.handleCheck}
-
+          />
+          <BarChart 
+          
           />
         </div>
       </MuiThemeProvider>
