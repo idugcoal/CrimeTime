@@ -27,6 +27,7 @@ export default class Checkboxes extends Component {
 							label={crime.crime} 
 							onCheck={this.handleCheck(crime)}
 							checked={crime.checked}
+							
 						/>
 					)
 				})}
