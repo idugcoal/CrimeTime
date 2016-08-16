@@ -9,10 +9,8 @@ export default class Checkboxes extends Component {
 		this.handleCheck = this.handleCheck.bind(this);
 	}
 
-	handleCheck(e) {
-		console.log('handled')
-		// this.set
-		// e.checked = !e.checked;
+	handleCheck(crime) {
+		console.log('in handleCheck', crime);
 	}
 
 	render() {
@@ -25,7 +23,9 @@ export default class Checkboxes extends Component {
 							key={crime.code}
 							iconStyle={{width: '30%', left: '25px', fill: '#68E861'}}
 							label={crime.crime} 
-							onCheck={this.handleCheck(crime)}
+							// onCheck={this.handleCheck(crime)}
+							// onCheck={this.handleCheck(crime.checked)}
+							onCheck={this.props.handleCheck}
 							checked={crime.checked}
 							
 						/>

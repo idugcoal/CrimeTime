@@ -43,9 +43,10 @@ class App extends Component {
       })
   }
 
-  handleCheck() {
+  handleCheck(crime) {
     //console.log('handleCheck', );
-    console.log('yo');
+    // console.log('handleCheck', crime.target.value === 'on' ? 'off');
+    crime.target.value = crime.target.value === 'on' ? 'off' : 'on';
   }
   
   render() {
@@ -77,7 +78,7 @@ class App extends Component {
           />
           <Checkboxes 
             crimeCodes={this.state.crimeCodes}
-            onCheck={this.handleCheck}
+            handleCheck={this.handleCheck}
           />
           <BarChart 
           
