@@ -8,7 +8,8 @@ import Slider from './components/Slider';
 import Checkboxes from './components/Checkboxes';
 import BarChart from './components/BarChart';
 import './App.css';
-const crimeCodesJSON = require('../appendedCodes.json');
+// const crimeCodesJSON = require('../appendedCodes.json');
+const crimeCodesJSON = require('../appendedCodes2.json');
 const axios = require('axios');
 
 injectTapEventPlugin();
@@ -38,15 +39,15 @@ class App extends Component {
   }
 
   handleSliderChange(value) {
-      this.setState({
-        sliderValue: value
-      })
+    this.setState({
+      sliderValue: value
+    })
   }
 
-  handleCheck(crime) {
-    //console.log('handleCheck', );
-    // console.log('handleCheck', crime.target.value === 'on' ? 'off');
-    crime.target.value = crime.target.value === 'on' ? 'off' : 'on';
+  handleCheck(values) {
+    this.setState({
+      checkboxes: values
+    })
   }
   
   render() {
