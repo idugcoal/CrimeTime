@@ -19,7 +19,8 @@ class App extends Component {
     super(props);
     this.state = {
       sliderValue: 11,
-      crimeCodes: crimeCodesJSON.crimeList
+      crimeCodes: crimeCodesJSON.crimeList,
+      checkboxes: ["648", "220", "624", "480", "761", "310", "320", "330", "110", "753", "886", "940", "910", "956", "762", "806", "352", "452", "438", "437", "210", "354", "350", "441", "440", "997", "888", "661", "520", "510"]
     }
 
     this.handleSliderChange = this.handleSliderChange.bind(this);
@@ -82,7 +83,10 @@ class App extends Component {
             handleCheck={this.handleCheck}
           />
           <BarChart 
-          
+            time={this.state.sliderValue}
+            checkboxes={this.state.checkboxes}
+            crimeCodes={this.state.crimeCodes}
+            crimes={this.state.crimes}
           />
         </div>
       </MuiThemeProvider>
