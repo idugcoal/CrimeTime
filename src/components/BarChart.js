@@ -14,7 +14,7 @@ export default class BarChart extends Component {
 	transformData(time, checkboxes, crimeCodes, crimes) {
 
 		// console.log('time', time);
-		console.log('checkboxes', checkboxes);
+		// console.log('checkboxes', checkboxes);
 		// console.log('crimeCodes', crimeCodes);
 		// console.log('crimes', crimes);
 
@@ -23,69 +23,42 @@ export default class BarChart extends Component {
 		let data = [];
     let crimeCounts = {};
     
-	  // filter crimes that occur in selected timeframe
-    let crimesByHour = crimes.filter(crime => (Math.floor(crime.time_occ / 100) === time));
-  
-    // console.log('crimesByHour', crimesByHour);
+    // create a crimesByHour object where key = hour (0 to 23) and value = an array of crime objects
+		let crimesByHour = {
+			"0" : [],
+			"1" : [],
+			"2" : [],
+			"3" : [],
+			"4" : [],
+			"5" : [],
+			"6" : [],
+			"7" : [],
+			"8" : [],
+			"9" : [],
+			"10" : [],
+			"11" : [],
+			"12" : [],
+			"13" : [],
+			"14" : [],
+			"15" : [],
+			"16" : [],
+			"17" : [],
+			"18" : [],
+			"19" : [],
+			"20" : [],
+			"21" : [],
+			"22" : [],
+			"23" : []
+		}
 
-    // add zero values for crime codes not found in time-filtered crimeCounts
-    for(var code in crimeCodes) {
-    	// if crimeCounts doesn't have a value for the crime, give it zero
-    	let obj = {};
-    	if(!crimesByHour.hasOwnProperty(crimeCodes[code].value)) {
-    		obj['xValue'] = crimeCodes[code].label
-    		obj['yValue'] = 0
-    		// console.log('no')
-    	} else {
-    		obj['xValue'] = crimeCodes[code].label
-    		let count = 0;
-    		for(var key in crimesByHour) {
-    			if(crimesByHour[key].crm_cd == crimeCodes[code].value) {
-    				count++
-    			}
-    		}
-    		obj['yValue'] = count;
-    		// console.log('yes')
-    		if(checkboxes.indexOf(crimeCodes[code].value) !== -1) {
-	    		data.push(obj);
-	    	} else {
-	    		data.splice(data.indexOf(crimeCodes[code].value))
-	    	}
-    	}
-    }
+  	for(var key in crimes) {
+  		let time = Math.floor(crimes[key].time_occ / 100)
+  		crimesByHour[time].push(crimes[key]);
+  	}
 
-    	
+  	console.log(crimesByHour);
 
-
-
-    // add true values for all crime codes 
-
-
-    // console.log('crimeCounts', crimeCounts)
-    console.log('data', data);
-
-  //   // filter crimes in the selected timeframe that have been selected
-  //   let crimesByCheckbox = crimesByHour.filter((crime) => checkboxes.indexOf(crime.crm_cd) !== -1);
-  //   // create counts object for checked crimes in the selected timeframe
-  //   crimesByCheckbox.forEach((crime) => {
-  //     if(crimeCounts.hasOwnProperty(crime.crm_cd)) {
-  //       crimeCounts[crime.crm_cd]++;
-  //     } else {
-  //       crimeCounts[crime.crm_cd] = 1;
-  //     }
-  //   });
-
-  //   // console.log('crimeCounts', crimeCounts);
-
-  //   // create data object
-  //   for(var key in crimeCounts) {
-  //   	let obj = {};
-  //   	obj['xValue'] = crimeCodesJSON[key];
-  //   	obj['yValue'] = crimeCounts[key];
-  //   	data.push(obj);
-  //   }
-
-		// // console.log('data', data);
+ 
 		return(
 			<Chart 
 				type={"bar"}
