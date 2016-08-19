@@ -20,7 +20,38 @@ class App extends Component {
     this.state = {
       sliderValue: 11,
       crimeCodes: crimeCodesJSON.crimeList,
-      checkboxes: ["648", "220", "624", "480", "761", "310", "320", "330", "110", "753", "886", "940", "910", "956", "762", "806", "352", "452", "438", "437", "210", "354", "350", "441", "440", "997", "888", "661", "520", "510"]
+      checkboxes: [
+        "110", 
+        "210", 
+        "220",
+        "310", 
+        "320", 
+        "330", 
+        "350", 
+        "352", 
+        "354", 
+        "437", 
+        "438", 
+        "440", 
+        "441", 
+        "452", 
+        "480", 
+        "510"
+        "520", 
+        "624", 
+        "648", 
+        "661", 
+        "753", 
+        "761", 
+        "762", 
+        "806", 
+        "886", 
+        "888", 
+        "910", 
+        "940", 
+        "956", 
+        "997", 
+      ]
     };
 
     this.handleSliderChange = this.handleSliderChange.bind(this);
@@ -53,7 +84,6 @@ class App extends Component {
   }
   
   render() {
-    console.log('hello');
     const muiTheme = getMuiTheme({
       slider: {
         trackSize: 4,
@@ -67,13 +97,10 @@ class App extends Component {
         rippleColor: 'brown'
       },
     });
-    // console.log('hello')
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
-
           <div className="App">
             <Header />
-          
             <Clock sliderValue={this.state.sliderValue} />
             <Slider 
               onSliderChange={this.handleSliderChange} 
