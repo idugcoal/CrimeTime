@@ -4,13 +4,14 @@
 
 .App-logo {
   /*animation: App-logo-spin infinite 20s linear;*/
-  height: 3vw;
-  filter: invert(100%);
+  height: 1.5vw;
+  filter: invert(100%) drop-shadow(10px 10px 10px brown) ;
+  filter: ;
 }
 
 .App-header {
   background-color: #222;
-  height: 8vw;
+  height: 4vw;
   padding: 20px;
   color: white;
   text-align: center;
@@ -48,10 +49,10 @@
   display:block;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: right;
+  justify-content: center;
   align-content: center;
   align-items: center;
-  width: 1000px;
+  width: 1200px;
   margin: auto;
 
 }
@@ -86,41 +87,9 @@
   to { transform: rotate(360deg); }
 }
 
-/*@media (min-width: 410px) {
-  .Checkboxes .Checkbox {
-    max-width: calc(50% - 10px);
-  }
+.Time {
+  margin-top: 10px;
 }
-@media (min-width: 620px) {
-  .Checkboxes .Checkbox {
-    max-width: calc(33.33333% - 10px);
-  }
-}
-@media (min-width: 830px) {
-  .Checkboxes .Checkbox {
-    max-width: calc(25% - 10px);
-  }
-}
-@media (min-width: 1040px) {
-  .Checkboxes .Checkbox {
-    max-width: calc(20% - 10px);
-  }
-}
-@media (min-width: 1250px) {
-  .Checkboxes .Checkbox {
-    max-width: calc(16.66667% - 10px);
-  }
-}
-@media (min-width: 1460px) {
-  .Checkboxes .Checkbox {
-    max-width: calc(14.28571% - 10px);
-  }
-}
-@media (min-width: 1670px) {
-  .Checkboxes .Checkbox {
-    min-width: calc(12.5% - 10px);
-  }
-}*/
 
 .bar {
   fill: steelblue;
@@ -131,7 +100,7 @@
 }
 
 .axis {
-  font: 10px sans-serif;
+  font: 12px sans-serif;
 
 }
 
@@ -146,7 +115,4 @@
   display: none;
 }
 
-.text-anchor {
-  transform: rotate(90deg);
-}
 

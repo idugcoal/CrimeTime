@@ -19,7 +19,7 @@ export default class Clock extends Component {
 
   render() {
     return (
-      <div className="Clock"> {this.convertTime(this.props.sliderValue)}</div>
+      <div className="Clock"> {this.convertTime(this.props.sliderValue)} </div>
     )
   }
 }

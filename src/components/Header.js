@@ -8,7 +8,7 @@ export default class Header extends Component {
     return (
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h2>Crime Time</h2>
+        <div className='headerText'>Crime Time</div>
       </div>
     );
   }

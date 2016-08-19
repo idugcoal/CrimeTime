@@ -57,14 +57,14 @@ class App extends Component {
     const muiTheme = getMuiTheme({
       slider: {
         trackSize: 4,
-        trackColor: '#222',
-        trackColorSelected: '#222',
+        trackColor: 'brown',
+        trackColorSelected: 'brown',
         handleSize: 24,
         handleSizeActive: 20,
-        handleColorZero: '#68E861',
-        handleFillColor: '#68E861',
-        selectionColor: '#68E861',
-        rippleColor: '#e86168'
+        handleColorZero: 'steelblue',
+        handleFillColor: 'steelblue',
+        selectionColor: 'steelblue',
+        rippleColor: 'brown'
       },
     });
     // console.log('hello')

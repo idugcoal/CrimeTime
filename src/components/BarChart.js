@@ -10,7 +10,6 @@ export default class BarChart extends Component {
 		super(props);
 		
  		this.transformData = this.transformData.bind(this);
-    // console.log('crimeCodesJSON HELLLLLLOOOO', crimeCodesJSON)
 	}
 
 	transformData(time, checkboxes, crimeCodes, crimes) {
@@ -18,7 +17,6 @@ export default class BarChart extends Component {
 		
 		if(crimes === undefined) return '';
     
-    // create a valid crimes array
     let validCrimes = [
      // "648", 
      "220",
@@ -52,7 +50,6 @@ export default class BarChart extends Component {
      "510"
     ]
     
-    // create a crimesByHour object where key = hour (0 to 23) and value = an array of crime objects
 		let crimesByHour = {
 			"0" : [],
 			"1" : [],
@@ -94,16 +91,13 @@ export default class BarChart extends Component {
   		}
   	});
 
-  	// create an array of objects where obj['xValue'] is the x-axis value and obj['yValue'] is the y-axis value
   	for(key in crimeCounts) {
   		let obj = {};
   		obj['text'] = key;
   		obj['value'] = crimeCounts[key]
-  		// obj['hello'] = test;
 			data.push(obj)
   	}
 
-  	// return valid crimes that have been checked
   	data = data.filter((crime) => {
       let crimeCode = crime['text'];
       crime['text'] = crimeCodesJSON[crimeCode];
