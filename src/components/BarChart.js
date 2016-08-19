@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Chart from 'react-bar-chart';
-const crimeCodesJSON = require('../../appendedCodes4.json');
+// import Chart from "d3act/lib/components/Chart";
 
+const crimeCodesJSON = require('../../appendedCodes4.json');
 
 export default class BarChart extends Component {
 	
@@ -9,6 +10,7 @@ export default class BarChart extends Component {
 		super(props);
 		
  		this.transformData = this.transformData.bind(this);
+    // console.log('crimeCodesJSON HELLLLLLOOOO', crimeCodesJSON)
 	}
 
 	transformData(time, checkboxes, crimeCodes, crimes) {
@@ -95,33 +97,29 @@ export default class BarChart extends Component {
   	// create an array of objects where obj['xValue'] is the x-axis value and obj['yValue'] is the y-axis value
   	for(key in crimeCounts) {
   		let obj = {};
-  		obj['text'] = key;//crimeCodesJSON[key];
+  		obj['text'] = key;
   		obj['value'] = crimeCounts[key]
   		// obj['hello'] = test;
 			data.push(obj)
   	}
 
-  	console.log('data before filter', data.length, data)
   	// return valid crimes that have been checked
   	data = data.filter((crime) => {
-  		// console.log(crime['xValue']);
-  		// if (checkboxes.indexOf(crime['xValue']) != -1) console.log('CHECKED');
-  		// if (validCrimes.indexOf(crime['xValue'] != -1)) console.log('VALID');
-  		// console.log("crime['xValue']", crime['xValue'])
-  		return (checkboxes.indexOf(crime['text']) != -1 && validCrimes.indexOf(crime['text'] != -1))
+      let crimeCode = crime['text'];
+      crime['text'] = crimeCodesJSON[crimeCode];
+  		return (checkboxes.indexOf(crimeCode) != -1 && validCrimes.indexOf(crimeCode != -1))
   	})
 
   	console.log('data after filter', data.length, data)
 
 		return(
 			<Chart 
-				// type={"bar"}
+        // type={"bar"}
 				width={1200}
 				height={500}
 				margin={{top: 40, right: 40, bottom: 150, left: 40}}
-				showTooltips={true}
-				data={data.sort((a, b) => ((a.xValue > b.xValue) ? 1 : ((b.xValue > a.xValue) ? -1 : 0)))}
-
+				ylabel={"Number of incidents"}
+				data={data.sort((a, b) => ((a.text > b.text) ? 1 : ((b.text > a.text) ? -1 : 0)))}
 			/>
 		)
 	}

@@ -28,4 +28,5 @@ module.exports = {
   "888": "Trespassing",
   "661": "Unauthorized Computer Access",
   "520": "Vehicle - Attempt Stolen",
-  "510": "Vehicle Stolen"}
+  "510": "Vehicle Stolen"
+}
