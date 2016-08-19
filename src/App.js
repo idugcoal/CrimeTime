@@ -8,8 +8,8 @@ import Slider from './components/Slider';
 import Checkboxes from './components/Checkboxes';
 import BarChart from './components/BarChart';
 import './App.css';
-// const crimeCodesJSON = require('../appendedCodes2.json');
-const crimeCodesJSON = require('../appendedCodes3.json');
+const crimeCodesJSON = require('../appendedCodes2.json');
+// const crimeCodesJSON = require('../appendedCodes3.json');
 const axios = require('axios');
 
 injectTapEventPlugin();
@@ -20,7 +20,7 @@ class App extends Component {
     this.state = {
       sliderValue: 11,
       crimeCodes: crimeCodesJSON.crimeList,
-      checkboxes: ["648", "220", "624", "480"]//, "761", "310", "320", "330", "110", "753", "886", "940", "910", "956", "762", "806", "352", "452", "438", "437", "210", "354", "350", "441", "440", "997", "888", "661", "520", "510"]
+      checkboxes: ["648", "220", "624", "480", "761", "310", "320", "330", "110", "753", "886", "940", "910", "956", "762", "806", "352", "452", "438", "437", "210", "354", "350", "441", "440", "997", "888", "661", "520", "510"]
     };
 
     this.handleSliderChange = this.handleSliderChange.bind(this);
@@ -46,13 +46,14 @@ class App extends Component {
   }
 
   handleCheck(values) {
+    console.log('in handleCheck')
     this.setState({
       checkboxes: values
     })
   }
   
   render() {
-
+    console.log('hello');
     const muiTheme = getMuiTheme({
       slider: {
         trackSize: 4,
@@ -66,30 +67,30 @@ class App extends Component {
         rippleColor: '#e86168'
       },
     });
-
+    // console.log('hello')
     return (
-      <MuiThemeProvider muiTheme={muiTheme}>
+        <MuiThemeProvider muiTheme={muiTheme}>
 
-        <div className="App">
-          <Header />
-        
-          <Clock sliderValue={this.state.sliderValue} />
-          <Slider 
-            onSliderChange={this.handleSliderChange} 
-            sliderValue={this.state.sliderValue}
-          />
-          <Checkboxes 
-            crimeCodes={this.state.crimeCodes}
-            handleCheck={this.handleCheck}
-          />
-          <BarChart 
-            time={this.state.sliderValue}
-            checkboxes={this.state.checkboxes}
-            crimeCodes={this.state.crimeCodes}
-            crimes={this.state.crimes}
-          />
-        </div>
-      </MuiThemeProvider>
+          <div className="App">
+            <Header />
+          
+            <Clock sliderValue={this.state.sliderValue} />
+            <Slider 
+              onSliderChange={this.handleSliderChange} 
+              sliderValue={this.state.sliderValue}
+            />
+            <Checkboxes 
+              crimeCodes={this.state.crimeCodes}
+              handleCheck={this.handleCheck}
+            />
+            <BarChart 
+              time={this.state.sliderValue}
+              checkboxes={this.state.checkboxes}
+              crimeCodes={this.state.crimeCodes}
+              crimes={this.state.crimes}
+            />
+          </div>
+        </MuiThemeProvider>
     );
   }
 }

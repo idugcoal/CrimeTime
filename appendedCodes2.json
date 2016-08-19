@@ -30,3 +30,4 @@ module.exports = {"crimeList": [
   {"value": "520", "label": "Vehicle - Attempt Stolen", "checked": true},
   {"value": "510", "label": "Vehicle Stolen", "checked": true},
 ], "value": true}
+
