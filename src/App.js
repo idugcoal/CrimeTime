@@ -79,15 +79,15 @@ class App extends Component {
               onSliderChange={this.handleSliderChange} 
               sliderValue={this.state.sliderValue}
             />
-            <Checkboxes 
-              crimeCodes={this.state.crimeCodes}
-              handleCheck={this.handleCheck}
-            />
             <BarChart 
               time={this.state.sliderValue}
               checkboxes={this.state.checkboxes}
               crimeCodes={this.state.crimeCodes}
               crimes={this.state.crimes}
+            />
+            <Checkboxes 
+              crimeCodes={this.state.crimeCodes}
+              handleCheck={this.handleCheck}
             />
           </div>
         </MuiThemeProvider>

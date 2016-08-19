@@ -45,12 +45,15 @@
   margin-top: -10px;
   font-size: 1em;*/
 
-   display:flex;
+  display:block;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
+  justify-content: right;
+  align-content: center;
+  align-items: center;
+  width: 1000px;
+  margin: auto;
+
 }
 
 .Checkboxes .Checkbox {
@@ -59,10 +62,15 @@
   padding: 10px;
   margin-left: 10px;
   margin-top: 10px;*/
-   width: 300px;
+/*   width: 300px;
     flex-grow: 0;
     flex-shrink: 0;
-    flex-basis: 0;
+    flex-basis: 0;*/
+
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: left;
 }
 
 .Slider {
