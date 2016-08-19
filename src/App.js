@@ -36,7 +36,7 @@ class App extends Component {
         "441", 
         "452", 
         "480", 
-        "510"
+        "510",
         "520", 
         "624", 
         "648", 
@@ -50,7 +50,7 @@ class App extends Component {
         "910", 
         "940", 
         "956", 
-        "997", 
+        "997" 
       ]
     };
 
@@ -77,7 +77,6 @@ class App extends Component {
   }
 
   handleCheck(values) {
-    console.log('in handleCheck')
     this.setState({
       checkboxes: values
     })
