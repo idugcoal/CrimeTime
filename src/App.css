@@ -39,7 +39,7 @@
   align-items: center;
   width: 1200px;
   margin: auto;
-  height: 0px;
+  /*height: 0px;*/
   background-color:purple;
 
 }
