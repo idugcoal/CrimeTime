@@ -101,7 +101,7 @@ export default class BarChart extends Component {
   	data = data.filter((crime) => {
       let crimeCode = crime['text'];
       crime['text'] = crimeCodesJSON[crimeCode];
-  		return (checkboxes.indexOf(crimeCode) != -1 && validCrimes.indexOf(crimeCode != -1))
+  		return (checkboxes.indexOf(crimeCode) !== -1 && validCrimes.indexOf(crimeCode !== -1))
   	})
 
   	console.log('data after filter', data.length, data)
