@@ -1,6 +1,0 @@
-module.exports = {"crimeList": [
-  {"value": "648", "label": "Arson", "checked": true},
-  {"value": "220", "label": "Attempted Robbery", "checked": true},
-  {"value": "624", "label": "Battery", "checked": true},
-  {"value": "480", "label": "Bike Stolen", "checked": true},
-], "value": true}
